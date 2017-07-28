@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -11,6 +5,8 @@ import {
   Text,
   View
 } from 'react-native';
+
+import api from 'api';
 
 export default class wenxuecity_news extends Component {
   render() {
@@ -28,6 +24,9 @@ export default class wenxuecity_news extends Component {
         </Text>
       </View>
     );
+  }
+  componentDidMount(){
+		api.init();
   }
 }
 
