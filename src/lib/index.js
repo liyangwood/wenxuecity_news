@@ -1,5 +1,5 @@
-import xml2json from 'xml2json';
+import xml2js from 'react-native-xml2js';
 
-export default {
-	xml2json
+export {
+	xml2js
 };

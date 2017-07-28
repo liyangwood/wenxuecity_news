@@ -25,8 +25,8 @@ export default class wenxuecity_news extends Component {
       </View>
     );
   }
-  componentDidMount(){
-		api.init();
+  async componentDidMount(){
+		await api.init();
   }
 }
 

@@ -3,15 +3,16 @@ import moment from 'moment';
 
 const debug = __DEV__;
 
-const KG = {
-    _,
-    moment
+export {
+	_,
+	moment
 };
 
+const KG = {};
 KG.log = (log)=>{
-    if(debug){
-        console.log('[LOG] - ' + log);
-    }
+	if(debug){
+		console.log('[LOG] - ' + (_.isString(log)?log:JSON.stringify(log)));
+	}
 
 };
 
