@@ -1,0 +1,3 @@
+rootProject.name = 'wenxuecity_news'
+
+include ':app'
