@@ -26,7 +26,9 @@ const ajax = (url, data = {})=>{
 
 		fetch(url, data).then((resp)=>{
 			if(resp.status >= 200){
-				xml2js.parseString(resp._bodyText, (err, rs)=>{
+				xml2js.parseString(resp._bodyText, {
+					explicitArray : false
+				}, (err, rs)=>{
 					if(err){
 						console.error(err);
 						return;

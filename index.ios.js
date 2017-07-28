@@ -5,48 +5,49 @@ import {
   Text,
   View
 } from 'react-native';
+import app from 'app';
 
-import api from 'api';
+// import api from 'api';
 
-export default class wenxuecity_news extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-  async componentDidMount(){
-		await api.init();
-  }
-}
+// export default class wenxuecity_news extends Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text style={styles.welcome}>
+//           Welcome to React Native!
+//         </Text>
+//         <Text style={styles.instructions}>
+//           To get started, edit index.ios.js
+//         </Text>
+//         <Text style={styles.instructions}>
+//           Press Cmd+R to reload,{'\n'}
+//           Cmd+D or shake for dev menu
+//         </Text>
+//       </View>
+//     );
+//   }
+//   async componentDidMount(){
+// 		await api.init();
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   },
+//   welcome: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   instructions: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   },
+// });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('wenxuecity_news', () => wenxuecity_news);
+AppRegistry.registerComponent('wenxuecity_news', () => app);

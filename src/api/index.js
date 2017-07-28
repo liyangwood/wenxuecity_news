@@ -14,11 +14,8 @@ const channel = ()=>{
 
 const F = {
 	init : async ()=>{
-		await F.request('news', {});
 
 		KG.log('api init success');
-
-
 	},
 
 	request : async (method, param, success, error)=>{
@@ -39,7 +36,7 @@ const F = {
 
 		try{
 			const res = await request(config.SERVER_URL, data);
-			KG.log(_.values(res));
+			return res;
 		}catch(e){
 			alert(e);
 		}
