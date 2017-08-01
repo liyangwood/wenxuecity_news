@@ -4,11 +4,18 @@ import _ from 'lodash';
 
 
 const F = {
-	async setNewsList(dispatch){
+	async setNewsList(dispatch=false){
 		const res = await api.request('index');
 		const list = _.values(res.list);
-		console.log(list);
-		dispatch(action.setNewsList(list));
+		dispatch && dispatch(action.setNewsList(list));
+		return list;
+	},
+
+	async setNewsListMore(dispatch, lastID){
+		const res = await api.request('list', {lastID});
+		const list = _.values(res.list);
+		dispatch && dispatch(action.setNewsListMore(list));
+		return list;
 	}
 };
 

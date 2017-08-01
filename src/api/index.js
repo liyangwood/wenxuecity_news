@@ -32,6 +32,15 @@ const F = {
 					version : 2
 				};
 				break;
+			case 'list':
+				data = {
+					act : 'list',
+					channel : 'news',
+					lastID : param.lastID,
+					pagesize : 25,
+					version : 2
+				};
+				break;
 		}
 
 		try{

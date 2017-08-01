@@ -6,6 +6,12 @@ const F = {
 			type : types.news_list_set,
 			list
 		};
+	},
+	setNewsListMore(list){
+		return {
+			type : types.news_list_set_more,
+			list
+		};
 	}
 };
 

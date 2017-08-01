@@ -12,6 +12,7 @@
     "native-base": "2.2.0",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.2",
+    "react-native-gifted-listview": "0.0.15",
     "react-native-xml2js": "1.0.3",
     "react-redux": "4.4.5",
     "redux": "^3.7.2",

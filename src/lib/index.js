@@ -5,6 +5,7 @@ export const createContainer = (container, mapState, mapDispatch)=>{
 	return connect(mapState, mapDispatch)(container);
 };
 
+
 export {
 	xml2js
 };

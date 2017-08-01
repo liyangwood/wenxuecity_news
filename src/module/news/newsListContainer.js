@@ -1,39 +1,66 @@
 import React from 'react';
 import {createContainer} from "lib";
 import data from 'app/data';
-import {ScrollView, Text} from 'react-native';
-
+import {Spinner, Container, Header} from 'native-base';
+import NewsList from './newsList';
+import {News} from 'app/data/class';
+import {_} from 'kg';
 
 const C = class extends React.Component{
 	constructor(p){
 		super(p);
 		this.state = {
-			loading : false
+			loading : true
 		};
 	}
 
 	render(){
 		return (
-			<ScrollView>
-				<Text>{JSON.stringify(this.props.list)}</Text>
-			</ScrollView>
+			<Container>
+				<Header />
+				{
+					this.state.loading ?
+						(
+							<Spinner color="green" />
+						)
+						:
+						(
+							<NewsList {...this.props} />
+						)
+				}
+			</Container>
+
 		);
 	}
 
 	async componentDidMount(){
 		await this.props.getNewsList();
+		this.setState({loading : false});
 	}
 };
 
 export default createContainer(C, (state)=>{
 
+	const list = state.news.news_list;
+	let lastID = null;
+	if(_.size(list)>0){
+		lastID = new News(_.last(list))._get('postid')
+	}
+
 	return {
-		list : state.news.news_list
+		list : state.news.news_list,
+		lastID
 	};
 }, (dispatch)=>{
 	return {
 		getNewsList : async ()=>{
-			await data.method.news.setNewsList(dispatch);
+			return await data.method.news.setNewsList(dispatch);
+		},
+		getMoreList : async (lastID)=>{
+			if(lastID){
+				return await data.method.news.setNewsListMore(dispatch, lastID);
+			}
+
 		}
 	}
 });

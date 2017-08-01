@@ -15,7 +15,7 @@ const App = class extends React.Component{
 		return (
 			<Provider store={data.store}>
 				<Container>
-					<Tabs initialPage={1} tabBarPosition="bottom">
+					<Tabs initialPage={0} tabBarPosition="bottom">
 						<Tab heading="Tab1">
 							<NewsListContainer />
 						</Tab>
