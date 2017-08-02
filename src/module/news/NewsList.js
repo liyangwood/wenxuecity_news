@@ -95,11 +95,8 @@ const Component = class extends React.Component{
 	}
 
 	clickItem(id){
-		Toast.show({
-			text : id,
-			position : 'bottom',
-			duration : 2000
-		});
+		this.props.goToDetail(id);
+
 	}
 };
 

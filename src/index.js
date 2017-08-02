@@ -6,6 +6,7 @@ import data from 'app/data';
 import { addNavigationHelpers, NavigationActions, StackNavigator } from 'react-navigation';
 import router from './router';
 import {goPath} from 'lib';
+import {StatusBar} from 'react-native';
 
 
 import './boot';

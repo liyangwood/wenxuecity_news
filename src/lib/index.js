@@ -12,16 +12,16 @@ export {
 };
 
 let _goPath = null;
-export const goPath = (register)=>{
-	if(_.isFunction(register)){
-		_goPath = register;
+export const goPath = (...args)=>{
+	if(_.isFunction(args[0])){
+		_goPath = args[0];
 	}
 	else{
 		if(!_goPath){
 			throw new Error('Method goPath must be register first');
 		}
 
-		_goPath.apply(arguments);
+		_goPath.apply(null, args);
 	}
 
 };

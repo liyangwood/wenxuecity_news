@@ -1,5 +1,5 @@
 import React from 'react';
-import {createContainer} from "lib";
+import {createContainer, goPath} from "lib";
 import data from 'app/data';
 import {Spinner, Container, Header} from 'native-base';
 import NewsList from './NewsList';
@@ -61,6 +61,12 @@ export default createContainer(C, (state)=>{
 				return await data.method.news.setNewsListMore(dispatch, lastID);
 			}
 
+		},
+		goToDetail : async (newsID)=>{
+
+			await data.method.news.setNewsDetail(newsID, dispatch);
+			console.log(newsID)
+			goPath('news_detail');
 		}
 	}
 });

@@ -2,7 +2,8 @@ import types from './constant';
 import {_} from 'kg';
 
 const initState = {
-	news_list : []
+	news_list : [],
+	detail : null
 };
 
 export default (state=initState, action)=>{
@@ -16,6 +17,11 @@ export default (state=initState, action)=>{
 			return {
 				...state,
 				news_list : _.concat(state.news_list, action.list)
+			};
+		case types.news_detail_set:
+			return {
+				...state,
+				detail : action.detail
 			};
 		default :
 			return state;

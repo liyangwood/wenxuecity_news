@@ -16,6 +16,10 @@ const F = {
 		const list = _.values(res.list);
 		dispatch && dispatch(action.setNewsListMore(list));
 		return list;
+	},
+
+	async setNewsDetail(detailID, dispatch){
+		dispatch(action.setNewsDetail(detailID));
 	}
 };
 
