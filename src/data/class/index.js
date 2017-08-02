@@ -1,5 +1,7 @@
 import News from './News';
+import NewsDetail from './NewsDetail';
 
 export {
-	News
+	News,
+	NewsDetail
 };

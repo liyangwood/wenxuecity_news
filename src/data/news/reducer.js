@@ -3,7 +3,8 @@ import {_} from 'kg';
 
 const initState = {
 	news_list : [],
-	detail : null
+	detail : null,
+	detailMap : {}
 };
 
 export default (state=initState, action)=>{
@@ -22,6 +23,13 @@ export default (state=initState, action)=>{
 			return {
 				...state,
 				detail : action.detail
+			};
+		case types.news_detail_map_set:
+			const map = _.clone(state.detailMap);
+			map[action.id] = action.data;
+			return {
+				...state,
+				detailMap : map
 			};
 		default :
 			return state;

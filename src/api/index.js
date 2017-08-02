@@ -41,6 +41,13 @@ const F = {
 					version : 2
 				};
 				break;
+			case 'view':
+				data = {
+					act : 'view',
+					channel : 'news',
+					id : param.ID
+				};
+				break;
 		}
 
 		try{

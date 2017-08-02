@@ -1,11 +1,13 @@
 import _ from 'lodash';
 import moment from 'moment';
+import I18N from './I18N';
 
 const debug = __DEV__;
 
 export {
 	_,
-	moment
+	moment,
+	I18N
 };
 
 const KG = {};

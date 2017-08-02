@@ -3,5 +3,6 @@ export default {
 	news_list_set : 'news/news_list_set',
 	news_list_set_more : 'news/news_list_set_more',
 
-	news_detail_set : 'news/news_detail_set'
+	news_detail_set : 'news/news_detail_set',
+	news_detail_map_set : 'news/news_detail_map_set'
 };

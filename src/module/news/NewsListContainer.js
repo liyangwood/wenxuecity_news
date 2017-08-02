@@ -34,6 +34,7 @@ const C = class extends React.Component{
 	}
 
 	async componentDidMount(){
+
 		await this.props.getNewsList();
 		this.setState({loading : false});
 	}
@@ -63,10 +64,8 @@ export default createContainer(C, (state)=>{
 
 		},
 		goToDetail : async (newsID)=>{
-
-			await data.method.news.setNewsDetail(newsID, dispatch);
-			console.log(newsID)
 			goPath('news_detail');
+			await data.method.news.setNewsDetail(newsID, dispatch);
 		}
 	}
 });

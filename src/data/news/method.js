@@ -20,6 +20,12 @@ const F = {
 
 	async setNewsDetail(detailID, dispatch){
 		dispatch(action.setNewsDetail(detailID));
+
+		if(detailID){
+			const res = await api.request('view', {ID : detailID});
+			dispatch(action.setNewsData(detailID, res));
+		}
+
 	}
 };
 

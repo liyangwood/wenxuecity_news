@@ -19,6 +19,14 @@ const F = {
 			type : types.news_detail_set,
 			detail : detailID
 		};
+	},
+
+	setNewsData(id, data){
+		return {
+			type : types.news_detail_map_set,
+			id,
+			data
+		}
 	}
 };
 
