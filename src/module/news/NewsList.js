@@ -1,9 +1,9 @@
 import React from 'react';
-import {Container, Content, List, ListItem, Left, Body, Right, Thumbnail, Text, Spinner} from 'native-base';
+import {Container, Content, List, ListItem, Left, Body, Right, Thumbnail, Text, Spinner, Toast} from 'native-base';
 import KG, {_} from 'kg';
 import {News} from 'app/data/class';
 // import GiftedListView from 'react-native-gifted-listview';
-import {RefreshControl, View} from 'react-native';
+import {RefreshControl, TouchableOpacity} from 'react-native';
 
 const Component = class extends React.Component{
 	constructor(p){
@@ -16,7 +16,7 @@ const Component = class extends React.Component{
 	render(){
 		const p = {
 			dataArray : this.props.list,
-			renderRow : this.renderListItem,
+			renderRow : this.renderListItem.bind(this),
 			renderError : ()=>{},
 			enableEmptySections : true,
 			onEndReached : this.loadMore.bind(this),
@@ -75,22 +75,31 @@ const Component = class extends React.Component{
 		const no = new News(d);
 		const image = no.format('image');
 		return (
-			<ListItem>
-				{image ? (
+			<ListItem onPress={this.clickItem.bind(this, no.getID())}>
 
-						<Thumbnail square size={80} source={{uri:image}} />
+					{image ? (
 
-				) : null}
+							<Thumbnail square size={80} source={{uri:image}} />
 
-				<Body>
-					<Text>{no._get('title')}</Text>
-					<Text noted>Read : {no._get('count')}</Text>
-				</Body>
+					) : null}
+
+					<Body>
+						<Text>{no._get('title')}</Text>
+						<Text noted>Read : {no._get('count')}</Text>
+					</Body>
 
 
 
 			</ListItem>
 		);
+	}
+
+	clickItem(id){
+		Toast.show({
+			text : id,
+			position : 'bottom',
+			duration : 2000
+		});
 	}
 };
 

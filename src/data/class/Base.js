@@ -32,4 +32,8 @@ export default class {
 	_get(key){
 		return _.get(this.variables, key);
 	}
+
+	getID(){
+		return this._get('postid');
+	}
 }

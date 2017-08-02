@@ -2,7 +2,7 @@ import React from 'react';
 import {createContainer} from "lib";
 import data from 'app/data';
 import {Spinner, Container, Header} from 'native-base';
-import NewsList from './newsList';
+import NewsList from './NewsList';
 import {News} from 'app/data/class';
 import {_} from 'kg';
 
