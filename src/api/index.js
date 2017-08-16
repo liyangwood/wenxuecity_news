@@ -48,6 +48,13 @@ const F = {
 					id : param.ID
 				};
 				break;
+			case 'video':
+				data = {
+					act : 'video',
+					lastID : param.lastID || '',
+					pagesize : 20
+				};
+				break;
 		}
 
 		try{
